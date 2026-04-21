@@ -12,7 +12,7 @@ public class Tester extends Pracownik {
     public boolean isCzyAutomatyzujacy() { return czyAutomatyzujacy; }
     public int getLiczbaScenariuszy()    { return liczbaScenariuszy; }
 
-    // Tester automatyzujący dostaje bonus 15%, manualny – stawkę bazową
+
     @Override
     public double obliczKosztMiesieczny() {
         return czyAutomatyzujacy ? getStawkaBazowa() * 1.15 : getStawkaBazowa();
@@ -26,7 +26,6 @@ public class Tester extends Pracownik {
                 + " | Koszt: " + String.format("%.2f", obliczKosztMiesieczny()) + " PLN";
     }
 
-    // Metoda specyficzna dla Testera
     public void uruchomRaportTestow() {
         System.out.println(">>> Raport testów - " + getImie() + " " + getNazwisko() + ":");
         System.out.println("    Typ testowania: " + (czyAutomatyzujacy ? "Automatyzacja" : "Manualne"));
